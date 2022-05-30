@@ -19,6 +19,9 @@ if (keyboard_check(vk_down)) {
 	if (xspeed == 0) {		
 		/* Check if we're aligned to the grid */
 		if (place_snapped(_gridManager.gridWidth, _gridManager.gridHeight)) {
+			/* Set the facing direction to <Down> */
+			facing = "Down";
+			
 			/* Move vertically */
 			yspeed = maxSpeed / 2;
 		}
@@ -31,6 +34,9 @@ if (keyboard_check(vk_up)) {
 	if (xspeed == 0) {
 		/* Check if we're aligned to the grid */
 		if (place_snapped(_gridManager.gridWidth, _gridManager.gridHeight)) {
+			/* Set the facing direction to <Up> */
+			facing = "Up";
+			
 			/* Move vertically */
 			yspeed = -maxSpeed / 2;
 		}
@@ -43,6 +49,9 @@ if (keyboard_check(vk_left)) {
 	if (yspeed == 0) {
 		/* Check if we're aligned to the grid */
 		if (place_snapped(_gridManager.gridWidth, _gridManager.gridHeight)) {
+			/* Set the facing direction to <Left> */
+			facing = "Left";
+			
 			/* Move horizontally */
 			xspeed = -maxSpeed / 2;
 		}
@@ -55,6 +64,9 @@ if (keyboard_check(vk_right)) {
 	if (yspeed == 0) {
 		/* Check if we're aligned to the grid */
 		if (place_snapped(_gridManager.gridWidth, _gridManager.gridHeight)) {
+			/* Set the facing direction to <Right> */
+			facing = "Right";
+			
 			/* Move horizontally */
 			xspeed = maxSpeed / 2;
 		}
@@ -76,3 +88,35 @@ if (!keyboard_check(vk_left) && !keyboard_check(vk_right)) {
 		xspeed = 0;
 	}
 }
+
+/* Check which way the Entity is facing */
+switch (facing) {
+case "Down":
+	if (yspeed > 0) {
+		sprite_index = sprPlayerWalkDown;
+	} else {
+		sprite_index = sprPlayerIdleDown;
+	}
+	break;
+case "Up":
+	if (yspeed < 0) {
+		sprite_index = sprPlayerWalkUp;
+	} else {
+		sprite_index = sprPlayerIdleUp;
+	}
+	break;
+case "Left":
+	if (xspeed < 0) {
+		sprite_index = sprPlayerWalkLeft;
+	} else {
+		sprite_index = sprPlayerIdleLeft;
+	}
+	break;
+case "Right":
+	if (xspeed > 0) {
+		sprite_index = sprPlayerWalkRight;
+	} else {
+		sprite_index = sprPlayerIdleRight;
+	}
+	break;
+};
