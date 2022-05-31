@@ -120,3 +120,79 @@ case "Right":
 	}
 	break;
 };
+
+/* Check to see if there is a collision with an Item */
+var _inst;
+	_inst = instance_place(x, y, objItem);
+if (instance_exists(_inst)) {
+	/* Check to see which item it is */
+	var _type;
+		_type = _inst.item_type;
+	switch (_type) {
+	case "Bow":
+		hasBow = true;
+		instance_destroy(_inst);
+		break;
+	case "Bomb":
+		var _count;
+			_count = _inst.item_count;
+		if (numBombs < 100) {
+			numBombs += _count;
+		}
+		instance_destroy(_inst);
+		break;
+	case "Arrow":
+		var _count;
+			_count = _inst.item_count;
+		if (numArrows < 100) {
+			numArrows += _count;
+		}
+		instance_destroy(_inst);
+		break;
+	case "Key":
+		var _id;
+			_id = _inst.key_id;
+		if ((_id == 0 || _id == 1) && numKeys[_id] < 3) {
+			numKeys[_id]++;
+			instance_destroy(_inst);
+		} else if ((_id == 2 || _id == 3) && numKeys[_id] < 2) {
+			numKeys[_id]++;
+			instance_destroy(_inst);
+		} else if (_id == 4 && numKeys[_id] < 1) {
+			numKeys[_id]++;
+			instance_destroy(_inst);
+		}
+		break;
+	case "Gem":
+		var _id;
+			_id = _inst.gem_id;
+		if (_id == 0) {
+			numGems++;
+			if (hasPoints == true) {
+				numPoints += 10;
+			}
+		} else if (_id == 1) {
+			numGems += 5;
+			if (hasPoints == true) {
+				numPoints += 50;
+			}
+		} else if (_id == 2) {
+			numGems += 10;
+			if (hasPoints == true) {
+				numPoints += 100;
+			}
+		} else if (_id == 3) {
+			numGems += 20;
+			if (hasPoints == true) {
+				numPoints += 200;
+			}
+		} else if (_id == 4) {
+			numGems += 50;
+			if (hasPoints == true) {
+				numPoints += 500;
+			}
+		}
+		instance_destroy(_inst);
+		break;
+	};
+}

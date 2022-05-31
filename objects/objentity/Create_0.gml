@@ -5,10 +5,16 @@ yspeed			= 0;		// yspeed controls the vertical speed.
 maxSpeed		= 4;		// The maxSpeed is the fastest an Entity can move around in the level.
 
 /* Declare the stat variables */
-hitPoints		= 3;		// hitPoints is basically the health. If this is used, it can take the form of a health bar or sprites like Zelda hearts.
+hitPoints		= 10;		// hitPoints is basically the health. If this is used, it can take the form of a health bar or sprites like Zelda hearts.
+hitPointsMax	= 10;		// The maximum amount of hit points before death.
 lifeCount		= 3;		// lifeCount is how many lives the player has left.
+lifeCountMax	= 99;		// The maximum number of lives the Player can have.
 stamina			= 10;		// If used, stamina will allow the Player to run when pressing the bound sprint key.
+staminaMax		= 10;		// The max stamina points.
 numPoints		= 0;		// If used, numPoints will represent the score.
+hasHitPoints	= false;	// If true, enables hit points
+hasStamina		= false;	// If true, enables the samina bar.
+hasPoints		= false;		// If true, enables score.
 
 /* Declare item variables */
 hasBow			= false;	// If the Entity has a bow, he can fire arrows if he has any.
