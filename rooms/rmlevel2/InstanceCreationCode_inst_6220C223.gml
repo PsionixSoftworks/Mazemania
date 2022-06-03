@@ -1,0 +1,2 @@
+movementType = "LeftRight";
+facing = "Right";

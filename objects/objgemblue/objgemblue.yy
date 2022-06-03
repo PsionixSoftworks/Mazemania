@@ -1,19 +1,18 @@
 {
-  "name": "objGemBlue",
   "spriteId": {
     "name": "sprGemBlue",
     "path": "sprites/sprGemBlue/sprGemBlue.yy",
   },
-  "spriteMaskId": null,
-  "visible": true,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": true,
   "managed": true,
+  "spriteMaskId": null,
+  "persistent": false,
   "parentObjectId": {
     "name": "objGem",
     "path": "objects/objGem/objGem.yy",
   },
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -35,6 +34,7 @@
     "path": "folders/Objects/Item/Gems.yy",
   },
   "resourceVersion": "1.0",
+  "name": "objGemBlue",
   "tags": [],
   "resourceType": "GMObject",
 }

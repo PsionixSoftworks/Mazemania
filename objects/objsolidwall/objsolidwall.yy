@@ -1,19 +1,18 @@
 {
-  "name": "objSolidWall",
   "spriteId": {
     "name": "sprSolidWall",
     "path": "sprites/sprSolidWall/sprSolidWall.yy",
   },
-  "spriteMaskId": null,
-  "visible": true,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": true,
   "managed": true,
+  "spriteMaskId": null,
+  "persistent": false,
   "parentObjectId": {
     "name": "objSolid",
     "path": "objects/objSolid/objSolid.yy",
   },
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -36,6 +35,7 @@
     "path": "folders/Objects/Solid.yy",
   },
   "resourceVersion": "1.0",
+  "name": "objSolidWall",
   "tags": [],
   "resourceType": "GMObject",
 }

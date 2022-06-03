@@ -1,19 +1,18 @@
 {
-  "name": "objSolidMask",
   "spriteId": {
     "name": "sprSolidMask",
     "path": "sprites/sprSolidMask/sprSolidMask.yy",
   },
-  "spriteMaskId": null,
-  "visible": false,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": false,
   "managed": true,
+  "spriteMaskId": null,
+  "persistent": false,
   "parentObjectId": {
     "name": "objSolid",
     "path": "objects/objSolid/objSolid.yy",
   },
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -33,6 +32,7 @@
     "path": "folders/Objects/Solid.yy",
   },
   "resourceVersion": "1.0",
+  "name": "objSolidMask",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -30,3 +30,5 @@ numGems			= 0;		// The number of gems in the Entities pouch.
 /* Declare other instance variables */
 image_speed		= 0.85;		// The animations will play at 85% their normal speed.
 facing			= "Down";	// The direction the Entity is facing.
+active			= false;	// When active, the Entity can move around.
+hurt			= false;	// When hasHitPoints is true, allows the Entity to take damage rather than dying right away.
