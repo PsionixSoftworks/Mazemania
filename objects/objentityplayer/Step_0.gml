@@ -119,6 +119,7 @@ if (active == true) {
 				/* Check if we have a Key to the Lock */
 				if (numKeys[_inst.lock_id] > 0) {
 					numKeys[_inst.lock_id]--;
+					audio_play_sound(sndEffectUnlock, 1, false);
 					instance_destroy(_inst);
 				}
 			}
@@ -137,6 +138,7 @@ if (active == true) {
 				/* Check if we have a Key to the Lock */
 				if (numKeys[_inst.lock_id] > 0) {
 					numKeys[_inst.lock_id]--;
+					audio_play_sound(sndEffectUnlock, 1, false);
 					instance_destroy(_inst);
 				}
 			}
@@ -155,6 +157,7 @@ if (active == true) {
 				/* Check if we have a Key to the Lock */
 				if (numKeys[_inst.lock_id] > 0) {
 					numKeys[_inst.lock_id]--;
+					audio_play_sound(sndEffectUnlock, 1, false);
 					instance_destroy(_inst);
 				}
 			}
@@ -173,6 +176,7 @@ if (active == true) {
 				/* Check if we have a Key to the Lock */
 				if (numKeys[_inst.lock_id] > 0) {
 					numKeys[_inst.lock_id]--;
+					audio_play_sound(sndEffectUnlock, 1, false);
 					instance_destroy(_inst);
 				}
 			}
@@ -254,14 +258,12 @@ if (active == true) {
 					numPoints += 500;
 				}
 			}
+			audio_play_sound(sndEffectGem, 1, false);
 			instance_destroy(_inst);
 			break;
 		case "Diamond":
-			if (room != room_last) {
-				alarm[1] = room_speed;
-			} else {
-				game_restart();
-			}
+			alarm[1] = room_speed * 2;
+			audio_play_sound(sndEffectDiamond, 1, false);
 			instance_destroy(_inst);
 			break;
 		};

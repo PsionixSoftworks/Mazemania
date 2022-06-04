@@ -6,4 +6,7 @@
 if (room == rmInit) {
 	/* If it is, go to Level 1 */
 	room_goto(rmLevel1);
+	
+	/* Start up the game's music */
+	audio_play_sound(sndMusic1, 1, true);	// This might not be the only track...
 }
