@@ -74,3 +74,37 @@ if (instance_exists(_inst)) {
 		xspeed = -xspeed;
 	}
 }
+
+/* Check if the Skeleton is colliding with an arrow */
+var _inst;
+	_inst = instance_place(x, y, objEntityArrow);
+if (instance_exists(_inst)) {
+	/* Check to see if hasHitPoints is true */
+	if (hasHitPoints == true) {
+		/* Check if the Skeleton has a frame of invincibility */
+		if (hurt == false) {
+			/* Take damage */
+			hurt = true;
+			hitPoints--;
+			image_alpha = 0.5;
+			audio_play_sound(sndEffectCrunch, 1, false);
+			instance_destroy(_inst);
+			alarm[4] = room_speed / 4;	// 1/4 of a second.
+		}
+	} else {
+		/* Otherwise, kill the Skeleton instantly */
+		audio_play_sound(sndEffectCrunch, 1, false);
+		instance_destroy(_inst);
+		instance_destroy();
+	}
+}
+
+/* Find the Explosion object */
+var _inst;
+	_inst = instance_place(x, y, objExplosion);
+
+/* Handle death from running out of hit points */
+if (hasHitPoints == true && hitPoints <= 0 || instance_exists(_inst)) {
+	audio_play_sound(sndEffectCrunch, 1, false);
+	instance_destroy();
+}

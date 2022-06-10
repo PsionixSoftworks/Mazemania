@@ -7,3 +7,5 @@ event_inherited();
 /* Reset the instance variables for this Entity */
 lifeCount			= 1;
 movementType		= "UpDown";
+hasHitPoints		= true;
+hitPoints			= 3;

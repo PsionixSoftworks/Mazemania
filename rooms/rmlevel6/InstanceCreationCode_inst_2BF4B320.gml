@@ -1,0 +1,2 @@
+movementType = "UpDown";
+facing = "Down";

@@ -12,6 +12,9 @@ if (!instance_exists(_inst)) {
 	game_end();
 }
 
+/* Set the HUD font */
+draw_set_font(fTextHUD);
+
 /* the '_yoffset' variable is responsible for positioning */
 var _yoffset;
 	_yoffset = 0;
@@ -57,3 +60,6 @@ if (_inst.numArrows > 0) {
 
 /* Now we draw the Gem Item with a 'times' (x) symbol and a count for Gems */
 draw_text(176 + 24, 0, "Gems: " + string(_inst.numGems));
+
+/* Reset it back to the default for everything else */
+draw_set_font(fText);

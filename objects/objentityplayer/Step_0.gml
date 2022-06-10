@@ -85,7 +85,14 @@ if (active == true) {
 				_inst.facing = facing;
 				_inst.maxSpeed = 8;
 				numArrows--;
-				alarm[2] = room_speed / 4;
+				alarm[2] = room_speed / 2;
+			}
+		} else if (numBombs > 0) {
+			if (canPlaceBomb == true) {
+				canPlaceBomb = false;
+				var _inst;
+					_inst = instance_create_layer(x, y, layer_get_id("Instances"), objEntityBomb);
+				alarm[3] = room_speed * 1.5;
 			}
 		}
 	}
@@ -196,7 +203,7 @@ if (active == true) {
 		switch (_type) {
 		case "Bow":
 			hasBow = true;
-			numArrows += 30;
+			numArrows += 10;
 			instance_destroy(_inst);
 			break;
 		case "Bomb":
@@ -220,11 +227,14 @@ if (active == true) {
 				_id = _inst.key_id;
 			if ((_id == 0 || _id == 1) && numKeys[_id] < 3) {
 				numKeys[_id]++;
+				audio_play_sound(sndEffectKey, 1, false);
 				instance_destroy(_inst);
 			} else if ((_id == 2 || _id == 3) && numKeys[_id] < 2) {
+				audio_play_sound(sndEffectKey, 1, false);
 				numKeys[_id]++;
 				instance_destroy(_inst);
 			} else if (_id == 4 && numKeys[_id] < 1) {
+				audio_play_sound(sndEffectKey, 1, false);
 				numKeys[_id]++;
 				instance_destroy(_inst);
 			}
@@ -279,15 +289,16 @@ if (active == true) {
 		if (hasHitPoints == true) {
 			if (hurt == false) {
 				hurt		= true;
-				image_alpha = 0.85;
-				alarm[4]	= room_speed / 4;	// A quarter of a second.
+				hitPoints	-= 1;
+				image_alpha = 0.5;
+				alarm[4]	= room_speed / 2;		// Half of a second.
 			}
 		} else {
 			xspeed			= 0;
 			yspeed			= 0;
 			facing			= "Down";
-			x				= xstart;
-			y				= ystart;
+			x				= startx;
+			y				= starty;
 			active			= false;
 			sprite_index	= sprPlayerIdleDown;
 			lifeCount--;
@@ -300,4 +311,36 @@ if (active == true) {
 		/* For now, just restart the game. This will be changed later */
 		game_restart();
 	}
+}
+
+/* Die instantly on Explosion */
+var _inst;
+	_inst = instance_place(x, y, objExplosion);
+if (instance_exists(_inst)) {
+	xspeed			= 0;
+	yspeed			= 0;
+	facing			= "Down";
+	x				= startx;
+	y				= starty;
+	active			= false;
+	sprite_index	= sprPlayerIdleDown;
+	lifeCount--;
+	hitPoints		= hitPointsMax;
+	image_alpha		= 1.0;
+	alarm[0]		= room_speed / 2;
+}
+
+/* Handle death from running out of hit points */
+if (hasHitPoints == true && hitPoints <= 0) {
+	xspeed			= 0;
+	yspeed			= 0;
+	facing			= "Down";
+	x				= startx;
+	y				= starty;
+	active			= false;
+	sprite_index	= sprPlayerIdleDown;
+	lifeCount--;
+	hitPoints		= hitPointsMax;
+	image_alpha		= 1.0;
+	alarm[0]		= room_speed / 2;
 }

@@ -3,7 +3,7 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "name": "sndMusic1",
+  "name": "sndMusicLevels",
   "conversionMode": 0,
   "compression": 0,
   "type": 0,
@@ -12,7 +12,7 @@
   "bitRate": 128,
   "volume": 1.0,
   "preload": false,
-  "soundFile": "sndmusic1.ogg",
+  "soundFile": "sndmusiclevels.ogg",
   "duration": 188.57146,
   "parent": {
     "name": "Music",

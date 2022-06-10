@@ -5,4 +5,3 @@ event_inherited();
 
 /* Set the Item type */
 item_type = "Bomb";
-

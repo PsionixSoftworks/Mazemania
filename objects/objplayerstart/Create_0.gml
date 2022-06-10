@@ -18,6 +18,3 @@ if (!instance_exists(_inst)) {
 	_inst.y			= starty;
 	_inst.facing	= "Down";
 }
-
-/* Destroy self if a Player instance exists */
-instance_destroy();

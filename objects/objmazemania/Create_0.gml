@@ -8,5 +8,11 @@ if (room == rmInit) {
 	room_goto(rmLevel1);
 	
 	/* Start up the game's music */
-	audio_play_sound(sndMusic1, 1, true);	// This might not be the only track...
+	audio_play_sound(sndMusicLevels, 1, true);	// This might not be the only track...
 }
+
+/* Scale the GUI layer to the viewport */
+display_set_gui_size(640, 360);
+
+/* Set the default font */
+draw_set_font(fText);
