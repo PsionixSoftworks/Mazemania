@@ -1,19 +1,18 @@
 {
-  "name": "objLockCopper",
   "spriteId": {
     "name": "sprLockCopper",
     "path": "sprites/sprLockCopper/sprLockCopper.yy",
   },
-  "spriteMaskId": null,
-  "visible": true,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": true,
   "managed": true,
+  "spriteMaskId": null,
+  "persistent": false,
   "parentObjectId": {
     "name": "objLock",
     "path": "objects/objLock/objLock.yy",
   },
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -35,6 +34,7 @@
     "path": "folders/Objects/Solid/Locks.yy",
   },
   "resourceVersion": "1.0",
+  "name": "objLockCopper",
   "tags": [],
   "resourceType": "GMObject",
 }

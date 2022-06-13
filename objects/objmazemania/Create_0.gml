@@ -16,3 +16,9 @@ display_set_gui_size(640, 360);
 
 /* Set the default font */
 draw_set_font(fText);
+
+/* Set to fullscreen */
+window_set_fullscreen(true);
+
+/* Hide the cursor */
+window_set_cursor(cr_none);

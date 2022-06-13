@@ -16,3 +16,15 @@ if (place_meeting(x, y + yspeed, objSolid)) {
 	yspeed = 0;
 }
 y += yspeed;
+
+/* Wrap screen controller */
+if (x > room_width) {
+	x = 0
+} else if (x < 0) {
+	x = room_width - 32;
+}
+if (y > room_height) {
+	y = 0;
+} else if (y < 0) {
+	y = room_height - 32;
+}

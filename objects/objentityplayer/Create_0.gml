@@ -4,5 +4,6 @@
 event_inherited();
 
 /* Declare instance specific variables */
-canFireArrow = true;
-canPlaceBomb = true;
+canFireArrow	= true;
+canPlaceBomb	= true;
+gemMilestone	= 1;

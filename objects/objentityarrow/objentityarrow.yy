@@ -1,19 +1,18 @@
 {
-  "name": "objEntityArrow",
   "spriteId": {
     "name": "sprItemArrow",
     "path": "sprites/sprItemArrow/sprItemArrow.yy",
   },
-  "spriteMaskId": null,
-  "visible": true,
   "solid": false,
-  "persistent": false,
-  "physicsObject": false,
+  "visible": true,
   "managed": true,
+  "spriteMaskId": null,
+  "persistent": false,
   "parentObjectId": {
     "name": "objEntity",
     "path": "objects/objEntity/objEntity.yy",
   },
+  "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
   "physicsGroup": 1,
@@ -38,6 +37,7 @@
     "path": "folders/Objects/Entity.yy",
   },
   "resourceVersion": "1.0",
+  "name": "objEntityArrow",
   "tags": [],
   "resourceType": "GMObject",
 }

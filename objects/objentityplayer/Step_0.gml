@@ -313,6 +313,14 @@ if (active == true) {
 	}
 }
 
+/* Gain an extra life every 100 gems */
+if (numGems > gemMilestone * 100) {
+	gemMilestone++;
+	if (lifeCount < lifeCountMax) {
+		lifeCount++;
+	}
+}
+
 /* Die instantly on Explosion */
 var _inst;
 	_inst = instance_place(x, y, objExplosion);

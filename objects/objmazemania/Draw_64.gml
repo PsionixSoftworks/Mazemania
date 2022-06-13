@@ -52,10 +52,15 @@ if (_inst.hasPoints == true) {
 	_yoffset += 10;
 }
 
-/* Now we check foe arrows */
+/* Now we check for Arrows */
 if (_inst.numArrows > 0) {
 	draw_text(0, _yoffset, "Arrows: " + string(_inst.numArrows));
 	_yoffset += 10;
+}
+
+/* Now we check for Bombs */
+if (_inst.numBombs > 0) {
+	draw_text(0, _yoffset, "Bombs: " + string(_inst.numBombs));
 }
 
 /* Now we draw the Gem Item with a 'times' (x) symbol and a count for Gems */
